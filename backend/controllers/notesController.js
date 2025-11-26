@@ -1,6 +1,6 @@
 const Note = require('../models/note'); // was '../models/Note'
 
-// ➕ Add note
+// Add note
 const addNote = async (req, res) => {
   try {
     const { title, content } = req.body;
