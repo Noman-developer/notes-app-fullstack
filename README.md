@@ -18,4 +18,3 @@ This is a simple, clean full-stack notes application with:
 - Add & view notes in real-time
 - Delete notes with confirmation
 - Protected routes using middleware
-
