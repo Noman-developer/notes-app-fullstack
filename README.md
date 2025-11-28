@@ -11,6 +11,7 @@ This is a simple, clean full-stack notes application with:
 
 ---
 
+
  🚀 Features
 
 - Register & Login users securely
