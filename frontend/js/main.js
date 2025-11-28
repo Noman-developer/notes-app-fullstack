@@ -63,12 +63,12 @@ if (registerForm) {
   });
 }
 
-// 🚫 Redirect to login if not logged in
+// Redirect to login if not logged in
 if (window.location.pathname.includes('notes.html') && !token) {
   window.location.href = 'index.html';
 }
 
-// 📄 Load Notes
+// Load Notes
 async function loadNotes() {
   try {
     const res = await fetch(NOTES_URL, {
@@ -98,7 +98,7 @@ async function loadNotes() {
   }
 }
 
-// ➕ Add Note
+// Add Note
 const addNoteForm = document.getElementById('addNoteForm');
 if (addNoteForm) {
   addNoteForm.addEventListener('submit', async function (e) {
@@ -129,7 +129,7 @@ if (addNoteForm) {
   });
 }
 
-// ❌ Delete Note
+// Delete Note
 async function deleteNote(id) {
   if (!confirm('Are you sure you want to delete this note?')) return;
 
@@ -152,7 +152,7 @@ async function deleteNote(id) {
   }
 }
 
-// 🔁 Load notes on page load
+// Load notes on page load
 if (window.location.pathname.includes('notes.html')) {
   loadNotes();
 }
