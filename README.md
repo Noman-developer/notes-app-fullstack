@@ -3,7 +3,7 @@
 This is a simple, clean full-stack notes application with:
 
 - ✅ User Authentication (Login/Register)
-- 🧠 Note Creation, Viewing & Deletion
+- 🧠 Note Creation, Viewing & Deletion 
 - 🖥️ Frontend: HTML, CSS, JavaScript
 - 🌐 Backend: Node.js, Express.js, MongoDB
 - 🔐 JWT Authentication
