@@ -8,7 +8,7 @@ This is a simple, clean full-stack notes application with:
 - 🌐 Backend: Node.js, Express.js, MongoDB 
 - 🔐 JWT Authentication
 - 💾 Data stored in MongoDB Atlas
-
+ 
  
 
  🚀 Features
