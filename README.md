@@ -6,7 +6,7 @@ This is a simple, clean full-stack notes application with:
 - 🧠 Note Creation, Viewing & Deletion 
 - 🖥️ Frontend: HTML, CSS, JavaScript
 - 🌐 Backend: Node.js, Express.js, MongoDB 
-- 🔐 JWT Authentication 
+- 🔐 JWT Authentication  
 - 💾 Data stored in MongoDB Atlas
   
  
