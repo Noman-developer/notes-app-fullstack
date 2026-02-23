@@ -9,7 +9,7 @@ This is a simple, clean full-stack notes application with:
 - 🔐 JWT Authentication  
 - 💾 Data stored in MongoDB Atlas
   
- 
+  
 
  🚀 Features
 
