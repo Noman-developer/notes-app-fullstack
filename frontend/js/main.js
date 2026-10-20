@@ -68,6 +68,16 @@ if (window.location.pathname.includes('notes.html') && !token) {
   window.location.href = 'index.html';
 }
 
+// Small helper so note text cannot run as HTML
+function escapeHtml(text) {
+  if (!text) return '';
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
 // Load Notes
 async function loadNotes() {
   try {
@@ -85,8 +95,9 @@ async function loadNotes() {
       container.innerHTML += `
         <div class="card mb-2">
           <div class="card-body">
-            <h5>${note.title}</h5>
-            <p>${note.content}</p>
+            <h5>${escapeHtml(note.title)}</h5>
+            <p>${escapeHtml(note.content)}</p>
+            <button onclick="editNote('${note._id}', '${escapeHtml(note.title)}', '${escapeHtml(note.content)}')" class="btn btn-sm btn-warning me-1">Edit</button>
             <button onclick="deleteNote('${note._id}')" class="btn btn-sm btn-danger">Delete</button>
           </div>
         </div>
@@ -127,6 +138,34 @@ if (addNoteForm) {
       alert('Server error');
     }
   });
+}
+
+// Edit Note
+async function editNote(id, oldTitle, oldContent) {
+  const title = prompt('Edit title:', oldTitle);
+  if (title === null) return;
+  const content = prompt('Edit content:', oldContent);
+  if (content === null) return;
+
+  try {
+    const res = await fetch(`${NOTES_URL}/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: token
+      },
+      body: JSON.stringify({ title, content })
+    });
+
+    if (res.ok) {
+      loadNotes();
+    } else {
+      alert('Failed to update note');
+    }
+  } catch (err) {
+    console.error(err);
+    alert('Server error');
+  }
 }
 
 // Delete Note
